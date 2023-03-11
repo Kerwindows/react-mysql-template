@@ -1,4 +1,7 @@
+require("dotenv").config();
 const express = require("express");
+const helmet = require("helmet");
+const cors = require("cors");
 const db = require("./config/db");
 // const cors = require("cors");
 const {
@@ -12,9 +15,15 @@ const {
   updateBio,
 } = require("./models");
 
-const app = express();
+const allowedOrigins = [
+  "http://localhost:3001",
+  "https://kerwindows.students.nomoredomainssbs.ru",
+  "https://www.kerwindows.students.nomoredomainssbs.ru",
+];
 
-// app.use(cors());
+const app = express();
+app.use(helmet());
+app.use(cors({ origin: allowedOrigins }));
 app.use(express.json());
 
 // Route to get all posts
