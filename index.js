@@ -23,7 +23,6 @@ const app = express();
 app.use(helmet());
 app.use(cors({ origin: allowedOrigins }));
 
-const PORT = 3000;
 app.use(cors());
 app.use(express.json());
 
@@ -137,6 +136,8 @@ app.delete("/api/delete/:id", async (req, res) => {
     });
 });
 
+const { PORT = 3000 } = process.env;
 app.listen(PORT, () => {
-  console.log(`Server is running on ${PORT}`);
+  // eslint-disable-next-line
+  console.log("Server is running");
 });
