@@ -17,7 +17,6 @@ const allowedOrigins = [
   "http://localhost:3001",
   "https://react-mysql.kerwindows.com",
   "https://www.react-mysql.kerwindows.com",
-  "https://api.react-mysql.kerwindows.com",
 ];
 
 const app = express();
