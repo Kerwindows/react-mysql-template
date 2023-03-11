@@ -17,7 +17,7 @@ const app = express();
 
 // Add CORS middleware
 const corsOptions = {
-  origin: "https://react-mysql.kerwindows.com",
+  origin: "https://api.react-mysql.kerwindows.com",
   optionsSuccessStatus: 200,
 };
 app.use(cors(corsOptions));
