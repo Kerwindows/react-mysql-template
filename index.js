@@ -1,5 +1,6 @@
 require("dotenv").config();
 const express = require("express");
+const cors = require("cors");
 const db = require("./config/db");
 const {
   getUsers,
@@ -14,18 +15,12 @@ const {
 
 const app = express();
 
-// Add CORS headers
-app.use((req, res, next) => {
-  res.header(
-    "Access-Control-Allow-Origin",
-    "https://react-mysql.kerwindows.com"
-  );
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  next();
-});
+// Add CORS middleware
+const corsOptions = {
+  origin: "https://react-mysql.kerwindows.com",
+  optionsSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
 
 app.use(express.json());
 
