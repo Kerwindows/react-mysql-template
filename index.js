@@ -1,5 +1,6 @@
 const express = require("express");
 const db = require("./config/db");
+const helmet = require("helmet");
 const cors = require("cors");
 const {
   getUsers,
@@ -12,7 +13,15 @@ const {
   updateBio,
 } = require("./models");
 
+const allowedOrigins = [
+  "http://localhost:3001",
+  "https://react-mysql.kerwindows.com",
+  "https://www.react-mysql.kerwindows.com",
+];
+
 const app = express();
+app.use(helmet());
+app.use(cors({ origin: allowedOrigins }));
 
 const PORT = 3000;
 app.use(cors());
