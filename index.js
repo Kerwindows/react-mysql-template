@@ -2,8 +2,8 @@ require("dotenv").config();
 const express = require("express");
 const helmet = require("helmet");
 const cors = require("cors");
+const auth = require("./middleware/auth");
 const db = require("./config/db");
-// const cors = require("cors");
 const {
   getUsers,
   getUser,
@@ -25,7 +25,7 @@ const app = express();
 app.use(helmet());
 app.use(cors({ origin: allowedOrigins }));
 app.use(express.json());
-
+app.use(auth);
 // Route to get all posts
 app.get("/api/users", async (req, res) => {
   await getUsers()
