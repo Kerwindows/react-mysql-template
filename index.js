@@ -15,16 +15,17 @@ const {
   updateBio,
 } = require("./models");
 
-// const allowedOrigins = [
-//   "http://localhost:3001",
-//   "https://kerwindows.students.nomoredomainssbs.ru",
-//   "https://www.kerwindows.students.nomoredomainssbs.ru",
-// ];
+const allowedOrigins = [
+  "http://localhost:3001",
+  "https://react-mysql.kerwindows.com",
+  "https://www.react-mysql.kerwindows.com",
+  "https://api.react-mysql.kerwindows.com",
+];
 const PORT = 3000;
 const app = express();
 // app.use(helmet());
-// app.use(cors({ origin: allowedOrigins }));
-app.use(cors()); // enable CORS for all origins
+app.use(cors({ origin: allowedOrigins }));
+// app.use(cors()); // enable CORS for all origins
 app.use(express.json());
 
 // Route to get all posts
