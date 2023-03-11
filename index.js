@@ -1,4 +1,4 @@
-// require("dotenv").config();
+require("dotenv").config();
 const express = require("express");
 const db = require("./config/db");
 // const helmet = require("helmet");
@@ -19,7 +19,6 @@ const allowedOrigins = [
   "http://localhost:3001",
   "https://react-mysql.kerwindows.com",
   "https://www.react-mysql.kerwindows.com",
-  "https://api.react-mysql.kerwindows.com",
 ];
 const PORT = 3000;
 const app = express();
