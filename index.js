@@ -35,7 +35,7 @@ app.post("/api/create", (req, res) => {
   const text = req.body.text;
 
   db.query(
-    "INSERT INTO posts (title, post_text, user_name) VALUES (?,?,?)",
+    "INSERT INTO users (title, post_text, user_name) VALUES (?,?,?)",
     [title, text, username],
     (err, result) => {
       if (err) {
@@ -50,7 +50,7 @@ app.post("/api/create", (req, res) => {
 app.post("/api/like/:id", (req, res) => {
   const id = req.params.id;
   db.query(
-    "UPDATE posts SET likes = likes + 1 WHERE id = ?",
+    "UPDATE users SET likes = likes + 1 WHERE id = ?",
     id,
     (err, result) => {
       if (err) {
