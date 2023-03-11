@@ -3,36 +3,8 @@ const db = require("./config/db");
 /*--------FUNCTIONS-----*/
 //function to get all post
 async function getUsers() {
-  //const [rows] = await db.query("SELECT *, NULL AS Password FROM users");
-  return [
-    {
-      id: 4,
-      username: "kerwindows",
-      firstname: "Marcus",
-      lastname: "Thompson",
-      email: "kerwin@mail.com",
-      password: "123456",
-      Password: null,
-    },
-    {
-      id: 5,
-      username: "asha",
-      firstname: "Jemila",
-      lastname: "Thompson",
-      email: "jemila@mail.com",
-      password: "123456",
-      Password: null,
-    },
-    {
-      id: 6,
-      username: "adaeze",
-      firstname: "Kamiyah",
-      lastname: "Thompson",
-      email: "adaze@mail.com",
-      password: "123456",
-      Password: null,
-    },
-  ];
+  const [rows] = await db.query("SELECT *, NULL AS Password FROM users");
+  return rows;
 }
 
 // function to get one post

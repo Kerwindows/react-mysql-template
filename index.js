@@ -23,8 +23,9 @@ const allowedOrigins = [
 const PORT = 3000;
 const app = express();
 // app.use(helmet());
-app.use(cors({ origin: allowedOrigins }));
-// app.use(cors()); // enable CORS for all origins
+app.use(cors({ origin: "*" }));
+// app.use(cors());
+// enable CORS for all origins
 app.use(express.json());
 
 // Route to get all posts
