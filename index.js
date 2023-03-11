@@ -21,9 +21,9 @@ const allowedOrigins = [
 
 const app = express();
 app.use(helmet());
-app.use(cors({ origin: allowedOrigins }));
+// app.use(cors({ origin: allowedOrigins }));
 
-app.use(cors());
+app.use(cors(*));
 app.use(express.json());
 
 // Route to get all posts
