@@ -1,6 +1,6 @@
 const express = require("express");
 const db = require("./config/db");
-const cors = require("cors");
+// const cors = require("cors");
 const {
   getUsers,
   getUser,
@@ -14,8 +14,7 @@ const {
 
 const app = express();
 
-const PORT = 3000;
-app.use(cors());
+// app.use(cors());
 app.use(express.json());
 
 // Route to get all posts
